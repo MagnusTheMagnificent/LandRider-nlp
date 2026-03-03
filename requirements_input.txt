@@ -1,0 +1,9 @@
+The Land Raider shall use the ultrasonic sensor to detect obstacles within a distance of 10 cm
+The Land Raider shall stop the drive motors within the avoidance threshold of 0.2 seconds after obstacle detection
+The Land Raider shall command the drive motors to turn the Land Raider at least 30 degrees away from the detected obstacle
+The Land Raider shall resume forward motion after obstacle clearance is confirmed by the ultrasonic sensor
+The Land Raider shall ensure the microcontroller executes the obstacle avoidance algorithm every 0.5s
+The Land Raider shall monitor battery state and prevent further movement if battery voltage is below 6.0V
+The Robot shall use onboard LEDs to indicate when an obstacle has triggered an avoidance maneuver
+The Robot shall allow users to upload updated obstacle avoidance scripts via USB or Bluetooth
+The Robot shall stop movement if any component critical to obstacle avoidance is malfunctioning
