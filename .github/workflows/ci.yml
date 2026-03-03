@@ -1,4 +1,4 @@
-name: Run NLP extractor
+name: Run NLP extractor (Notebook)
 
 on:
   push:
@@ -12,14 +12,20 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install spacy
+          pip install spacy notebook nbconvert
           python -m spacy download en_core_web_sm
 
-      - name: Run extractor
+      - name: Execute notebook
         run: |
-          python main.py
+          jupyter nbconvert --to notebook --execute main.py.ipynb --output executed.ipynb
+
+      - name: Upload executed notebook
+        uses: actions/upload-artifact@v4
+        with:
+          name: executed-notebook
+          path: executed.ipynb
